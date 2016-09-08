@@ -50,6 +50,12 @@ class SheltersController < ApplicationController
     end
   end
 
+  patch '/shelters/:id' do
+    @shelter = Shelter.find(params[:id])
+    @shelter.update(name: params[:name], address: params[:address], city: params[:city], state: params[:state])
+    redirect "/shelters/#{@shelter.id}"
+  end
+
 
 
 end
