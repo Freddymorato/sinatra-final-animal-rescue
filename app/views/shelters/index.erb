@@ -9,8 +9,10 @@
           <p><%= shelter.address %></p>
           <p><%= shelter.city %>, <%= shelter.state %></p>
 
-          <% if shelter.user_id == current_user.id %>
-            <p><a href="/shelters/<%= shelter.id %>/edit">Edit Shelter</a></p> <!-- Only the user who created the shelter can edit it-->
+          <% if logged_in? %>
+            <% if shelter.user_id == current_user.id %>
+              <p><a href="/shelters/<%= shelter.id %>/edit">Edit Shelter</a></p> <!-- Only the user who created the shelter can edit it-->
+            <% end %>
           <% end %>
         </div>
       <% end %>
