@@ -1,0 +1,23 @@
+<div class="body-content">
+  <h1>List of Animal Shelters</h1>
+
+  <div class="container">
+    <div class="shelters-list">
+      <% Shelter.all.each do |shelter| %>
+        <div class="shelter-card">
+          <h1><%= shelter.name %></h1>
+          <p><%= shelter.address %></p>
+          <p><%= shelter.city %>, <%= shelter.state %></p>
+
+          <% if shelter.user_id == current_user.id %>
+            <p><a href="/shelters/<%= shelter.id %>/edit">Edit Shelter</a></p> <!-- Only the user who created the shelter can edit it-->
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <a href="/" class="btn btn-default btn-sm">Home</a>
+  <a href="/shelters/new" class="btn btn-default btn-sm">Add New Shelter</a>
+
+</div>

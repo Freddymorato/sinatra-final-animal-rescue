@@ -8,4 +8,5 @@ use Rack::MethodOverride
 
 use AnimalsController
 use SheltersController
+use UsersController
 run ApplicationController

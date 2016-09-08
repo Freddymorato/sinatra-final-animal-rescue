@@ -9,6 +9,11 @@ body {
   display: flex;
 }
 
+.shelter-card {
+  background-color: #FFF;
+  /*width: 75%;*/
+}
+
 .main-container {
   min-width: 100%;
 }
