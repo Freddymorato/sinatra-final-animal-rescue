@@ -6,4 +6,6 @@ end
 
 use Rack::MethodOverride
 
+use AnimalsController
+use SheltersController
 run ApplicationController

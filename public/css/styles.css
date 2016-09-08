@@ -1,0 +1,146 @@
+html {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+body {
+  background-image: url("/img/seigaiha.png");
+  display: flex;
+}
+
+.main-container {
+  min-width: 100%;
+}
+
+.body-content h1 {
+  margin-bottom: 30px;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+.jumbotron {
+  background-color: #eee;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.body-content {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 6px 4px -4px #999;
+    background-color: #555;
+    /* the rest of your styling */
+}
+
+.navbar-brand {
+  color: #D1E0E6;
+  letter-spacing: 0.25em;
+}
+
+.nav-btn {
+  background-color: #D1E0E6;
+}
+
+.space {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+/*.tweets p {
+  width: 30%;
+  background-color: #fff;
+  padding-bottom: 20px;
+  border: 1px solid #999;
+}*/
+
+.single-tweet {
+  /*display: flex;
+  justify-content: center;*/
+  margin: 0 auto;
+  width: 30%;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border: 1px solid #E3E3E3;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(156,156,156,1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(156,156,156,1);
+  box-shadow: 2px 2px 5px 0px rgba(156,156,156,1);
+  text-align: left;
+  padding: 10px 10px 10px 30px;
+}
+
+p.username {
+  color: #999;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.tweet-time {
+  font-size: 0.75em;
+  margin-top: -10px;
+  margin-bottom: 0px;
+}
+
+.edit-delete-tweet {
+  text-align: right;
+  padding-right: 10px;
+  margin-bottom: 0px;
+}
+
+.tweet-input {
+  height: 50px;
+}
+
+/*.footer {
+  position:absolute;
+  width:100%;
+  height: 5%;
+  bottom: 0px;
+  text-align: center;
+  background-color: #555;
+}*/
+
+footer {
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+    background-color: #555;
+   /* position: absolute;*/
+    /*left: 0;
+    bottom: 0;*/
+    height: 30px;
+    width: 100%;
+}
+
+.footer p {
+/*  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+  /*padding-top: 5px;*/
+  color: #D1E0E6;
+}
+
+@media screen and (min-width: 768px)
+.container .jumbotron, .container-fluid .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+@media screen and (min-width: 768px)
+.jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
