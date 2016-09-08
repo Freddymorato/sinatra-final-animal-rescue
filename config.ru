@@ -6,4 +6,4 @@ end
 
 use Rack::MethodOverride
 
-runApplicationController
+run ApplicationController
