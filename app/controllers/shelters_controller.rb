@@ -38,7 +38,16 @@ class SheltersController < ApplicationController
   ## EDIT ACTIONS ##
 
   get '/shelters/:id/edit' do
-    binding.pry
+    if logged_in?
+      @shelter = Shelter.find(params[:id])
+      if @shelter.user_id == current_user.id
+        erb :'shelters/edit'
+      else
+        redirect '/shelters'
+      end
+    else
+      redirect '/login'
+    end
   end
 
 
