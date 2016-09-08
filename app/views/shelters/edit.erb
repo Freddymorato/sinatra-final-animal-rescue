@@ -1,0 +1,18 @@
+<div class="body-content">
+  <h2>Edit Shelter</h2>
+
+  <div class="shelter-card">
+    <h1><%= @shelter.name %></h1>
+    <p><%= @shelter.address %></p>
+    <p><%= @shelter.city %>, <%= @shelter.state %></p>
+  </div>
+
+  <form action="/shelters/<%= @shelter.id %>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+    <input type="text" name="name" placeholder="Name" class="space"><br>
+    <input type="text" name="address" placeholder="Address" class="space"><br>
+    <input type="text" name="city" placeholder="City" class="space"><br>
+    <input type="text" name="state" placeholder="State" class="space"><br><br>
+    <input type="submit" class="btn btn-success btn-sm">
+  </form>
+</div>
