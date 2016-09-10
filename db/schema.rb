@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 6) do
 
   create_table "animals", force: :cascade do |t|
     t.string  "species"
     t.string  "breed"
     t.integer "age"
+    t.string  "name"
   end
 
   create_table "shelters", force: :cascade do |t|
