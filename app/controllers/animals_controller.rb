@@ -23,7 +23,7 @@ class AnimalsController < ApplicationController
        params[:age] == ""
       redirect '/animals/new'
     else
-      binding.pry
+      animal = Animal.create(params["animal"])
       redirect "/animals/#{animal.id}"
     end
   end

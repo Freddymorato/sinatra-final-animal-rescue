@@ -3,19 +3,19 @@
 
   <form action="/animals" method="POST">
     <label for="name">Animal Name</label>
-    <input type="text" id="name" name="name" class="space"><br>
+    <input type="text" id="name" name="animal[name]" class="space"><br>
     <label for="species">Species</label>
-    <input type="text" id="species" name="species" class="space"><br>
+    <input type="text" id="species" name="animal[species]" class="space"><br>
     <label for="breed">Breed</label>
-    <input type="text" id="breed" name="breed" class="space"><br>
+    <input type="text" id="breed" name="animal[breed]" class="space"><br>
     <label for="age">Age</label>
-    <input type="text" id="age" name="age" class="space"><br><br>
+    <input type="text" id="age" name="animal[age]" class="space"><br><br>
 
     <label>Choose a shelter:</label>
     <% Shelter.all.each do |shelter| %>
-      <input id="shelter_<%= shelter.id %>" type="checkbox" name="animal[shelter_id]">
+      <input id="shelter_<%= shelter.id %>" type="checkbox" name="animal[shelter_id]" value="<%= shelter.id %>"><%= shelter.name %></input><br>
     <% end %>
-
+    <br>
     <input type="submit" class="btn btn-primary btn-md">
   </form>
 </div>
