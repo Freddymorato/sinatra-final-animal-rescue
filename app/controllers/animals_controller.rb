@@ -9,7 +9,11 @@ class AnimalsController < ApplicationController
   ### CREATE ACTIONS ###
 
   get '/animals/new' do
-    "new animals"
+    if !logged_in?
+      redirect '/signup'
+    else
+      erb :'animals/new'
+    end
   end
 
   post '/animals' do

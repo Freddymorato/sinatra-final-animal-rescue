@@ -9,7 +9,7 @@ class SheltersController < ApplicationController
   ## CREATE ACTIONS ##
 
   get '/shelters/new' do
-    if !session[:user_id]
+    if !logged_in?
       redirect '/signup'
     else
       erb :'shelters/new'
