@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     if !session[:user_id]
       erb :'users/signup'
     else
-      binding.pry
+      redirect '/'
     end
   end
 
