@@ -17,7 +17,15 @@ class AnimalsController < ApplicationController
   end
 
   post '/animals' do
-
+    if params[:name] == "" ||
+       params[:species] == "" ||
+       params[:breed] == "" ||
+       params[:age] == ""
+      redirect '/animals/new'
+    else
+      binding.pry
+      redirect "/animals/#{animal.id}"
+    end
   end
 
 end

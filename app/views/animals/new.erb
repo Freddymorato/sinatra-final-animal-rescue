@@ -10,6 +10,12 @@
     <input type="text" id="breed" name="breed" class="space"><br>
     <label for="age">Age</label>
     <input type="text" id="age" name="age" class="space"><br><br>
+
+    <label>Choose a shelter:</label>
+    <% Shelter.all.each do |shelter| %>
+      <input id="shelter_<%= shelter.id %>" type="checkbox" name="animal[shelter_id]">
+    <% end %>
+
     <input type="submit" class="btn btn-primary btn-md">
   </form>
 </div>
