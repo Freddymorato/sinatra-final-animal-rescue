@@ -1,0 +1,20 @@
+<div class="body-content">
+  <h2>Edit Animal</h2>
+
+  <div class="animal-card">
+    <h1><%= @animal.name %></h1>
+    <p><%= @animal.species %></p>
+    <p><%= @animal.breed %></p>
+    <p><%= @animal.age %> years old</p>
+  </div>
+
+  <form action="/animals/<%= @animal.id %>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+    <input type="text" name="name" value="<%= @animal.name %>" class="space"><br>
+    <input type="text" name="species" value="<%= @animal.species %>" class="space"><br>
+    <input type="text" name="breed" value="<%= @animal.breed %>" class="space"><br>
+    <input type="text" name="age" value="<%= @animal.age %>" class="space"><br>
+    <input type="submit" class="btn btn-success btn-sm">
+  </form>
+
+</div>

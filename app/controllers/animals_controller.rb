@@ -35,4 +35,23 @@ class AnimalsController < ApplicationController
     erb :'animals/show'
   end
 
+  ## EDIT ACTIONS ##
+
+  get '/animals/:id/edit' do
+    if logged_in?
+      @animal = Animal.find(params[:id])
+      if @animal.shelter.user_id == current_user.id
+        erb :'animals/edit'
+      else
+        redirect '/animals'
+      end
+    else
+      redirect '/login'
+    end
+  end
+
+
+
+
+
 end
