@@ -28,4 +28,11 @@ class AnimalsController < ApplicationController
     end
   end
 
+  ## SHOW/READ ACTION ##
+
+  get '/animals/:id' do
+    @animal = Animal.find(params[:id])
+    erb :'animals/show'
+  end
+
 end
