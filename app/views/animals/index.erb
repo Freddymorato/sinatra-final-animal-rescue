@@ -1,5 +1,24 @@
 <div class="body-content">
   <h1>List of Available Animals</h1>
 
+  <div class="container">
+    <div class="animals-list">
+      <% Animal.all.each do |animal| %>
+        <div class="animal-card">
+          <h1><a href="/animals/<%= animal.id %>"><%= animal.name %></a></h1>
+          <p><%= animal.species %></p>
+          <p><%= animal.breed %></p>
+          <p><%= animal.age %> years old</p>
+
+          <% if logged_in? %>
+            <% if animal.shelter.user_id == current_user.id %>
+              <p><a href="/animals/<%= animal.id %>/edit">Edit Animal</a></p>
+            <% end %>
+          <% end %>
+        </div> <!-- animal card -->
+      <% end %>
+    </div> <!-- animals-list -->
+  </div>
+
   <a href="/animals/new" class="btn btn-default btn-sm">Add an Animal</a>
 </div>
