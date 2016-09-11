@@ -1,4 +1,7 @@
+require 'rack-flash'
+
 class AnimalsController < ApplicationController
+  use Rack::Flash
 
   ### ANIMALS INDEX ACTION ###
 
@@ -10,7 +13,8 @@ class AnimalsController < ApplicationController
 
   get '/animals/new' do
     if !logged_in?
-      redirect '/signup'
+      flash[:message] = "You must log in to add an animal."
+      redirect '/login'
     else
       erb :'animals/new'
     end

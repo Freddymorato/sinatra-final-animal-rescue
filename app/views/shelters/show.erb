@@ -4,9 +4,11 @@
     <p><%= @shelter.address %></p>
     <p><%= @shelter.city %>, <%= @shelter.state %></p>
 
-    <% if @shelter.user_id == current_user.id %>
-      <p><a href="/shelters/<%= @shelter.id %>/edit" class="btn btn-default btn-sm">Edit Shelter</a></p><br> <!-- Only the user who created the shelter can edit it-->
-    <% end %> <!-- end edit -->
+    <% if logged_in? %>
+      <% if @shelter.user_id == current_user.id %>
+        <p><a href="/shelters/<%= @shelter.id %>/edit" class="btn btn-default btn-sm">Edit Shelter</a></p><br> <!-- Only the user who created the shelter can edit it-->
+      <% end %> <!-- end edit -->
+    <% end %>  
 
     <h2>Available Animals</h2>
     <div class="container">

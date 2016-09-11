@@ -10,7 +10,8 @@ class SheltersController < ApplicationController
 
   get '/shelters/new' do
     if !logged_in?
-      redirect '/signup'
+      flash[:message] = "You need to log in to do that."
+      redirect '/login'
     else
       erb :'shelters/new'
     end
