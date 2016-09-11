@@ -75,8 +75,8 @@ body {
   margin-bottom: 30px;
 }
 
-.shelter-card h1 {
-  padding-top: 20px;
+.shelter-card {
+  padding: 10px;
 }
 
 .animal-card {
@@ -85,6 +85,10 @@ body {
 
 .animal-card h2 {
   margin-top: 0px;
+}
+
+.col-md-4 {
+  padding-top: 20px;
 }
 
 .theme-showcase .navbar .container {

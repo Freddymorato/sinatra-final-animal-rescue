@@ -4,17 +4,19 @@
   <div class="container">
     <div class="shelters-list">
       <% Shelter.all.each do |shelter| %>
-        <div class="shelter-card">
-          <h1><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h1>
-          <p><%= shelter.address %></p>
-          <p><%= shelter.city %>, <%= shelter.state %></p>
+        <div class="col-md-4">
+          <div class="shelter-card col-md-12">
+            <h1><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h1>
+            <p><%= shelter.address %></p>
+            <p><%= shelter.city %>, <%= shelter.state %></p>
 
-          <% if logged_in? %>
-            <% if shelter.user_id == current_user.id %>
-              <p><a href="/shelters/<%= shelter.id %>/edit">Edit Shelter</a></p> <!-- Only the user who created the shelter can edit it-->
+            <% if logged_in? %>
+              <% if shelter.user_id == current_user.id %>
+                <p><a href="/shelters/<%= shelter.id %>/edit">Edit Shelter</a></p> <!-- Only the user who created the shelter can edit it-->
+              <% end %>
             <% end %>
-          <% end %>
-        </div> <!-- shelter card -->
+          </div> <!-- end shelter card -->
+        </div> <!-- end col-md-4 -->
       <% end %>
     </div> <!-- shelters-list -->
   </div>
