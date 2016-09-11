@@ -50,7 +50,10 @@ class AnimalsController < ApplicationController
     end
   end
 
-
+  patch '/animals/:id' do
+    @animal = Animal.find(params[:id])
+    binding.pry
+  end
 
 
 
