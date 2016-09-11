@@ -4,22 +4,25 @@
   <div class="container">
     <div class="animals-list">
       <% Animal.all.each do |animal| %>
-        <div class="animal-card">
-          <h1><a href="/animals/<%= animal.id %>"><%= animal.name %></a></h1>
-          <p>Species: <%= animal.species %></p>
-          <p>Breed: <%= animal.breed %></p>
-          <p>Age: <%= animal.age %> years old</p>
-          <p>Shelter: <a href="/shelters/<%= animal.shelter_id %>"><%= animal.shelter.name %></a></p>
+        <div class="col-md-4">
+          <div class="animal-card col-md-12">
+            <h1><a href="/animals/<%= animal.id %>"><%= animal.name %></a></h1>
+            <p>Species: <%= animal.species %></p>
+            <p>Breed: <%= animal.breed %></p>
+            <p>Age: <%= animal.age %> years old</p>
+            <p>Shelter: <a href="/shelters/<%= animal.shelter_id %>"><%= animal.shelter.name %></a></p>
 
-          <% if logged_in? %>
-            <% if animal.shelter.user_id == current_user.id %>
-              <p><a href="/animals/<%= animal.id %>/edit">Edit Animal</a></p>
+            <% if logged_in? %>
+              <% if animal.shelter.user_id == current_user.id %>
+                <p><a href="/animals/<%= animal.id %>/edit">Edit Animal</a></p>
+              <% end %>
             <% end %>
-          <% end %>
-        </div> <!-- animal card -->
+          </div> <!-- animal card -->
+        </div> <!-- col-md-4 -->
       <% end %>
     </div> <!-- animals-list -->
   </div>
 
+  <br><br>
   <a href="/animals/new" class="btn btn-default btn-sm">Add an Animal</a>
 </div>
