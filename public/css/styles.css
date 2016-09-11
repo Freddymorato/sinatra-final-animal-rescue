@@ -9,9 +9,22 @@ body {
   display: flex;
 }
 
+.body-content {
+
+}
+
+.shelters-list {
+  /*display: flex;
+  flex-direction: column;
+  width: 70%;*/
+}
+
 .shelter-card, .animal-card {
   background-color: #FFF;
-  /*width: 75%;*/
+  border-radius: 5px;
+  /*flex-grow: 1;
+  justify-content: center;*/
+  padding-right: 10px;
 }
 
 .navbar-p {
