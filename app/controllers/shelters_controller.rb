@@ -10,7 +10,7 @@ class SheltersController < ApplicationController
 
   get '/shelters/new' do
     if !logged_in?
-      flash[:message] = "You need to log in to do that."
+      flash[:error] = "You need to log in to do that."
       redirect '/login'
     else
       erb :'shelters/new'
@@ -25,6 +25,7 @@ class SheltersController < ApplicationController
       redirect '/shelters/new'
     else
       shelter = current_user.shelters.create(params)
+      flash[:success] = "You have successfully added #{shelter.name}."
       redirect "/shelters/#{shelter.id}"
     end
   end
@@ -54,6 +55,7 @@ class SheltersController < ApplicationController
   patch '/shelters/:id' do
     @shelter = Shelter.find(params[:id])
     @shelter.update(name: params[:name], address: params[:address], city: params[:city], state: params[:state])
+    flash[:success] = "You have successfully edited #{@shelter.name}"
     redirect "/shelters/#{@shelter.id}"
   end
 

@@ -11,7 +11,7 @@ body {
 
 .container .flash-message {
   margin-top: 100px;
-  background-color: rgba(255, 0, 0, 0.3);  
+    
   min-width: 100%;
   position: relative;
   width: 100vw;
@@ -21,6 +21,21 @@ body {
 .flash-message p {
   padding: 10px;
   padding-left: 150px;
+}
+
+.flash-message .success-message {
+  background-color: rgba(0, 206, 0, 0.3);
+}
+
+.flash-message .success-message p {
+  border: 1px solid rgba(0, 206, 0, 0.7);
+}
+
+.flash-message .error-message {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.flash-message .error-message p {
   border: 1px solid rgba(255, 0, 0, 0.7);
 }
 
@@ -41,6 +56,9 @@ body {
   /*flex-grow: 1;
   justify-content: center;*/
   padding-right: 10px;
+  -webkit-box-shadow: 3px 3px 7px 0px rgba(173,173,173,1);
+  -moz-box-shadow: 3px 3px 7px 0px rgba(173,173,173,1);
+  box-shadow: 3px 3px 7px 0px rgba(173,173,173,1);
 }
 
 .navbar-p {

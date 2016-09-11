@@ -63,9 +63,17 @@
 
       <div class="container">
         <div class="flash-message">
-          <% if flash.has?(:message) %>
-            <p><%= flash[:message] %></p>
+          
+          <% if flash.has?(:error) %>
+            <div class="error-message">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% elsif flash.has?(:success) %>
+            <div class="success-message">
+              <p><%= flash[:success] %></p>
+            </div>
           <% end %>
+
         </div>
       </div>
 

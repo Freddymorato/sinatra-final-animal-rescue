@@ -13,7 +13,7 @@ class AnimalsController < ApplicationController
 
   get '/animals/new' do
     if !logged_in?
-      flash[:message] = "You must log in to add an animal."
+      flash[:error] = "You must log in to add an animal."
       redirect '/login'
     else
       erb :'animals/new'
@@ -28,6 +28,7 @@ class AnimalsController < ApplicationController
       redirect '/animals/new'
     else
       animal = Animal.create(params["animal"])
+      flash[:success] = "You have successfully added #{animal.name}"
       redirect "/animals/#{animal.id}"
     end
   end
@@ -57,6 +58,7 @@ class AnimalsController < ApplicationController
   patch '/animals/:id' do
     @animal = Animal.find(params[:id])
     @animal.update(name: params[:name], species: params[:species], breed: params[:breed], age: params[:age], shelter_id: params["animal"][:shelter_id])
+    flash[:success] = "You have successfully edited #{@animal.name}"
     redirect "/animals/#{@animal.id}"
   end
 
