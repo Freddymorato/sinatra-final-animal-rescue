@@ -31,7 +31,9 @@
   </div>
 
   <br><br>
-  <a href="/animals/new" class="btn btn-default btn-sm">Add Animal</a>
+  <% if @shelter.user_id == current_user.id %>
+    <a href="/animals/new" class="btn btn-default btn-sm">Add Animal</a>
+  <% end %>
   <a href="/shelters" class="btn btn-default btn-sm">View All Shelters</a>
 
 </div>
