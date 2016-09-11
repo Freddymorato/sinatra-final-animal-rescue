@@ -52,7 +52,8 @@ class AnimalsController < ApplicationController
 
   patch '/animals/:id' do
     @animal = Animal.find(params[:id])
-    binding.pry
+    @animal.update(name: params[:name], species: params[:species], breed: params[:breed], age: params[:age], shelter_id: params["animal"][:shelter_id])
+    redirect "/animals/#{@animal.id}"
   end
 
 
