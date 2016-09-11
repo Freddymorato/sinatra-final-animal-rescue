@@ -9,18 +9,19 @@
     <p>Shelter: <%= @animal.shelter.name %></p>
   </div>
 
-  <form action="/animals/<%= @animal.id %>" method="POST">
+  <form action="/animals/<%= @animal.id %>" method="POST" class="top-space">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
     <input type="text" name="name" value="<%= @animal.name %>" class="space"><br>
     <input type="text" name="species" value="<%= @animal.species %>" class="space"><br>
     <input type="text" name="breed" value="<%= @animal.breed %>" class="space"><br>
     <input type="text" name="age" value="<%= @animal.age %>" class="space"><br>
     
-    <label>Choose a shelter:</label>
+    <label class="top-space">Choose a shelter:</label>
     <% Shelter.all.each do |shelter| %>
       <input id="shelter_<%= shelter.id %>" type="radio" name="animal[shelter_id]" value="<%= shelter.id %>" <%= 'checked' if @animal.shelter == shelter %>><%= shelter.name %></input><br>
     <% end %>  
-      
+    
+    <br>
     <input type="submit" class="btn btn-success btn-sm">
   </form>
 

@@ -122,6 +122,10 @@ body {
   margin-bottom: 2px;
 }
 
+.top-space {
+  padding-top: 20px;
+}
+
 .section {
   margin-bottom: 30px;
 }
