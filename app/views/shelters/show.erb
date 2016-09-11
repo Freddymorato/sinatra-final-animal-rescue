@@ -1,31 +1,37 @@
 <div class="body-content">
-  <div class="shelter-card">
-    <h1><%= @shelter.name %></h1>
-    <p><%= @shelter.address %></p>
-    <p><%= @shelter.city %>, <%= @shelter.state %></p>
+  <div class="container">
+    <div class="shelter-card">
+      <h1><%= @shelter.name %></h1>
+      <p><%= @shelter.address %></p>
+      <p><%= @shelter.city %>, <%= @shelter.state %></p>
 
-    <% if logged_in? %>
-      <% if @shelter.user_id == current_user.id %>
-        <p><a href="/shelters/<%= @shelter.id %>/edit" class="btn btn-default btn-sm">Edit Shelter</a></p><br> <!-- Only the user who created the shelter can edit it-->
-      <% end %> <!-- end edit -->
-    <% end %>  
+      <% if logged_in? %>
+        <% if @shelter.user_id == current_user.id %>
+          <p><a href="/shelters/<%= @shelter.id %>/edit" class="btn btn-default btn-sm">Edit Shelter</a></p><br> <!-- Only the user who created the shelter can edit it-->
+        <% end %> <!-- end edit -->
+      <% end %>  
 
-    <h2>Available Animals</h2>
-    <div class="container">
-      <div class="animals-list">
-        <% @shelter.animals.each do |animal| %>
-          <div class="animal-card">
+    </div> <!-- end shelter-card -->
+  </div>
+
+  <h2>Available Animals</h2><br>
+  <div class="container">
+    <div class="animals-list">
+      <% @shelter.animals.each do |animal| %>
+        <div class="col-md-4">
+          <div class="animal-card col-md-12">
             <h2><a href="/animals/<%= animal.id %>"><%= animal.name %></a></h2>
             <p>Species: <%= animal.species %></p>
             <p>Breed: <%= animal.breed %></p>
             <p>Age: <%= animal.age %> years old</p>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
-
   </div>
 
+  <br><br>
+  <a href="/animals/new" class="btn btn-default btn-sm">Add Animal</a>
   <a href="/shelters" class="btn btn-default btn-sm">View All Shelters</a>
 
 </div>

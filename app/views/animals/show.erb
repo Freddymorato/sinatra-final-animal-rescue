@@ -6,8 +6,10 @@
     <p>Age: <%= @animal.age %> years old</p>
     <p>Shelter: <a href="/shelters/<%= @animal.shelter_id %>"><%= @animal.shelter.name %></a></p>
 
-    <% if @animal.shelter.user_id == current_user.id %>
-      <p><a href="/animals/<%= @animal.id %>/edit" class="btn btn-default btn-sm">Edit Animal</a></p><br>
+    <% if logged_in? %>
+      <% if @animal.shelter.user_id == current_user.id %>
+        <p><a href="/animals/<%= @animal.id %>/edit" class="btn btn-default btn-sm">Edit Animal</a></p><br>
+      <% end %>
     <% end %>
   </div>
 

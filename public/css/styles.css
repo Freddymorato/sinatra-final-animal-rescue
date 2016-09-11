@@ -75,6 +75,18 @@ body {
   margin-bottom: 30px;
 }
 
+.shelter-card h1 {
+  padding-top: 20px;
+}
+
+.animal-card {
+  padding: 10px;
+}
+
+.animal-card h2 {
+  margin-top: 0px;
+}
+
 .theme-showcase .navbar .container {
   width: auto;
 }
