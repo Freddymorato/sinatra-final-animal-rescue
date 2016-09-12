@@ -1,4 +1,4 @@
-require 'rack-flash'
+
 
 class SheltersController < ApplicationController
   use Rack::Flash

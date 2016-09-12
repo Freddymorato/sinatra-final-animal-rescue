@@ -1,4 +1,4 @@
-require 'rack-flash'
+
 
 class AnimalsController < ApplicationController
   use Rack::Flash

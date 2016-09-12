@@ -1,4 +1,4 @@
-require 'rack-flash'
+
 
 class UsersController < ApplicationController
   use Rack::Flash
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       flash[:error] = "Make sure you fill out every input field."
       redirect '/login'
     end
-    
+
     user = User.find_by(name: params[:name])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
