@@ -1,5 +1,3 @@
-
-
 class AnimalsController < ApplicationController
   use Rack::Flash
 

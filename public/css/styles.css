@@ -83,7 +83,7 @@ body {
   padding: 10px;
 }
 
-.animal-card h2 {
+.animal-card h2, h1 {
   margin-top: 0px;
 }
 

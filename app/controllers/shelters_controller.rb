@@ -1,5 +1,3 @@
-
-
 class SheltersController < ApplicationController
   use Rack::Flash
 
