@@ -25,6 +25,7 @@ class AnimalsController < ApplicationController
        params[:species] == "" ||
        params[:breed] == "" ||
        params[:age] == ""
+      flash[:error] = "Make sure you fill out every input field."
       redirect '/animals/new'
     else
       animal = Animal.create(params["animal"])
@@ -48,9 +49,11 @@ class AnimalsController < ApplicationController
       if @animal.shelter.user_id == current_user.id
         erb :'animals/edit'
       else
+        flash[:error] = "You do not have permission to edit this animal."
         redirect '/animals'
       end
     else
+      flash[:error] = "You need to be signed in to do that."
       redirect '/login'
     end
   end

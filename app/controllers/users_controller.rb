@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     if params[:name] == "" || params[:email] == "" || params[:password] == ""
+      flash[:error] = "Make sure you fill out every input field."
       redirect '/signup'
     else
       user = User.create(params)
@@ -31,6 +32,11 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
+    if params[:name] == "" || params[:password] == ""
+      flash[:error] = "Make sure you fill out every input field."
+      redirect '/login'
+    end
+    
     user = User.find_by(name: params[:name])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id

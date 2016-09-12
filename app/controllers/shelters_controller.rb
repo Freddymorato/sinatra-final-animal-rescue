@@ -1,4 +1,7 @@
+require 'rack-flash'
+
 class SheltersController < ApplicationController
+  use Rack::Flash
 
   ## SHELTERS INDEX ACTION ##
 
@@ -22,6 +25,7 @@ class SheltersController < ApplicationController
        params[:address] == "" ||
        params[:city] == "" ||
        params[:state] == ""
+      flash[:error] = "Make sure you fill out every input field."
       redirect '/shelters/new'
     else
       shelter = current_user.shelters.create(params)
@@ -45,9 +49,11 @@ class SheltersController < ApplicationController
       if @shelter.user_id == current_user.id
         erb :'shelters/edit'
       else
+        flash[:error] = "You do not have permission to edit this shelter."
         redirect '/shelters'
       end
     else
+      flash[:error] = "You must be signed in to edit a shelter."
       redirect '/login'
     end
   end
@@ -59,15 +65,4 @@ class SheltersController < ApplicationController
     redirect "/shelters/#{@shelter.id}"
   end
 
-
-
 end
-
-
-
-
-
-
-
-
-
