@@ -7,7 +7,7 @@
     <p><%= @shelter.city %>, <%= @shelter.state %></p>
   </div>
 
-  <form action="/shelters/<%= @shelter.id %>" method="POST">
+  <form action="/shelters/<%= @shelter.id %>" method="POST" class="top-space">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
     <input type="text" name="name" value="<%= @shelter.name %>" class="space"><br>
     <input type="text" name="address" value="<%= @shelter.address %>" class="space"><br>
